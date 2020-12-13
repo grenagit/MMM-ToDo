@@ -1,0 +1,31 @@
+.MMM-ToDo .symbol {
+  padding-left: 0;
+  padding-right: 10px;
+  font-size: 80%;
+  vertical-align: top;
+}
+
+.MMM-ToDo .completion {
+  padding-left: 0px;
+  padding-right: 10px;
+  font-size: 80%;
+	vertical-align: top;
+}
+
+.MMM-ToDo .symbol span {
+  display: inline-block;
+  -ms-transform: translate(0, 2px); /* IE 9 */
+  -webkit-transform: translate(0, 2px); /* Safari */
+  transform: translate(0, 2px);
+}
+
+.MMM-ToDo .title {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.MMM-ToDo .time {
+  padding-left: 30px;
+  text-align: right;
+  vertical-align: top;
+}

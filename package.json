@@ -1,0 +1,23 @@
+{
+  "name": "MMM-ToDo",
+  "version": "0.1.0",
+  "description": "Module for a Magic Mirror device display tasks from a .ical calendar.",
+  "main": "MMM-ToDo.js",
+  "author": "Grena",
+  "license": "MIT",
+  "dependencies": {
+    "ical": "^0.8.0",
+    "request": "^2.88.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grenagit/MMM-ToDo.git"
+  },
+  "keywords": [
+    "task",
+		"list",
+		"calendar",
+		"ical",
+		"nextcloud"
+  ]
+}
