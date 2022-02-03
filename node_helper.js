@@ -55,6 +55,12 @@ module.exports = NodeHelper.create({
 
 			Object.entries(data).forEach(([key, event]) => {
 				if (event.type == 'VTODO') {
+
+					// Migitage https://github.com/grenagit/MMM-ToDo/issues/1
+					if (typeof event.created === "undefined") {
+						event.created = event.dtstamp;
+					}
+
 					tasks.push({"title": event.summary, "status": event.status, "completion": parseInt(event.completion), "priority": (event.priority > 0 ? parseInt(event.priority) : 0), "created": event.created, "start": event.start, "due": event.due});
 					if(!self.config.showTaskCompleted && event.status == 'COMPLETED') {
 						tasks.pop();
@@ -77,4 +83,3 @@ module.exports = NodeHelper.create({
 	}
 
 });
-
