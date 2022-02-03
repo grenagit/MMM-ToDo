@@ -56,7 +56,7 @@ module.exports = NodeHelper.create({
 			Object.entries(data).forEach(([key, event]) => {
 				if (event.type == 'VTODO') {
 
-					// Migitage https://github.com/grenagit/MMM-ToDo/issues/1
+					// Mitigate https://github.com/grenagit/MMM-ToDo/issues/1
 					if (typeof event.created === "undefined") {
 						event.created = event.dtstamp;
 					}
