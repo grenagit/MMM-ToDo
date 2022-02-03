@@ -44,7 +44,7 @@ Module.register("MMM-ToDo",{
 	getScripts: function () {
 		return ["moment.js"];
 	},
-	
+
 	// Define required translations
 	getTranslations: function() {
 		return {
@@ -169,13 +169,17 @@ Module.register("MMM-ToDo",{
 
 	// Use the received data to set the various values before update DOM
 	processTodo: function(data) {
-		if (!data || !data[0].title || typeof data[0].created === "undefined") {
-			Log.error(this.name + ": Do not receive usable data.");
-			return;
-		}
 
-		this.tasks = data;
-		this.sort(this.tasks, this.config.sortOrder);
+		// Show an empty list, when ToDo list is empty
+		if (data.length > 0) {
+			if (!data || !data[0].title || typeof data[0].created === "undefined") {
+				Log.error(this.name + ": Do not receive usable data.");
+				return;
+			}
+
+			this.tasks = data;
+			this.sort(this.tasks, this.config.sortOrder);
+		}
 
 		this.loaded = true;
 		this.updateDom(this.config.animationSpeed);
