@@ -25,6 +25,7 @@ Module.register("MMM-ToDo",{
 		showSymbol: true,
 		defaultSymbol: "thumbtack", // Fontawesome Symbol see http://fontawesome.io/cheatsheet/
 		showCompletion: true,
+		hideTime: false,
 
 		urgency: 7, // 7 days
 		timeFormat: "relative",
@@ -139,18 +140,19 @@ Module.register("MMM-ToDo",{
 				var datePrefix = this.translate("CREATED") + " ";
 			}
 
-			if (this.config.timeFormat === "absolute") {
-				if ((this.config.urgency > 1) && (this.tasks[i].startDate - now < (this.config.urgency * oneDay))) {
-					timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).from(moment().format("YYYYMMDD")));
-				} else {
-					timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).format(this.config.dateFormat));
-				}
-			} else {
-				timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).fromNow());
+			if(!this.config.hideTime) {
+						if (this.config.timeFormat === "absolute") {
+							if ((this.config.urgency > 1) && (this.tasks[i].startDate - now < (this.config.urgency * oneDay))) {
+								timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).from(moment().format("YYYYMMDD")));
+							} else {
+								timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).format(this.config.dateFormat));
+							}
+						} else {
+							timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).fromNow());
+						}
+
+						taskWrapper.appendChild(timeWrapper);
 			}
-
-			taskWrapper.appendChild(timeWrapper);
-
 			wrapper.appendChild(taskWrapper);
 
 		}

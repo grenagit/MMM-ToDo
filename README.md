@@ -1,7 +1,7 @@
 # Module: MMM-ToDo
 This module displays tasks from a .ical calendar, including priority, completion, title and date. It works like a charm with [Nextcloud Tasks](https://apps.nextcloud.com/apps/tasks) !
 
-Symbol, Completion and Color Legend display may be enabled or disabled independently. The sort order can be fixed. 
+Symbol, Completion and Color Legend display may be enabled or disabled independently. The sort order can be fixed.
 
 <!--<p align="left">
 <img alt="MMM-VigilanceMeteoFrance Screenshot #1" src="MMM-VigilanceMeteoFrance_screenshot1.png" align="top" height="73px">
@@ -94,6 +94,7 @@ The following properties can be configured:
 | `showCompletion`             | Display the percentage of task completion. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `urgency`                    | When using a timeFormat of `absolute`, the `urgency` setting allows you to display tasks within a specific time frame as `relative`. This allows tasks within a certain time frame to be displayed as relative (in xx days) while others are displayed as absolute dates <br><br> **Possible values:** a positive integer representing the number of days for which you want a relative date, for example `7` (for 7 days) <br><br> **Default value:** `7`
 | `timeFormat`                 | Display times as absolute dates or relative time for each task next to it <br><br> **Possible values:** `'absolute'` or `'relative'` <br> **Default value:** `'relative'`
+| `hideTime`                   | Hide the column showing the creation time  <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `dateFormat`                 | Format to use for the date of tasks (when using absolute dates) <br><br> **Possible values:** See [Moment.js formats](http://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `'MMM Do'` (e.g. Jan 18th)
 | `initialLoadDelay`           | The initial delay before loading. If you have multiple modules that use the same API key, you might want to delay one of the requests. (Milliseconds) <br><br> **Possible values:** `1000` - `5000` <br> **Default value:**  `0`
 | `calendar`                 	 | The department number (metropolitan france only). <br><br>  This value is **REQUIRED**
