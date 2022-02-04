@@ -1,6 +1,6 @@
 {
   "name": "MMM-ToDo",
-  "version": "0.1.0",
+  "version": "1.2.0",
   "description": "Module for a Magic Mirror device display tasks from a .ical calendar.",
   "main": "MMM-ToDo.js",
   "author": "Grena",
