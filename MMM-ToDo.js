@@ -181,6 +181,8 @@ Module.register("MMM-ToDo",{
 
 			this.tasks = data;
 			this.sort(this.tasks, this.config.sortOrder);
+		} else {
+			Log.info(this.name + ": Tasks list is empty!");
 		}
 
 		this.loaded = true;
