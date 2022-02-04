@@ -141,17 +141,17 @@ Module.register("MMM-ToDo",{
 			}
 
 			if(!this.config.hideTime) {
-						if (this.config.timeFormat === "absolute") {
-							if ((this.config.urgency > 1) && (this.tasks[i].startDate - now < (this.config.urgency * oneDay))) {
-								timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).from(moment().format("YYYYMMDD")));
-							} else {
-								timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).format(this.config.dateFormat));
-							}
-						} else {
-							timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).fromNow());
-						}
+				if (this.config.timeFormat === "absolute") {
+					if ((this.config.urgency > 1) && (this.tasks[i].startDate - now < (this.config.urgency * oneDay))) {
+						timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).from(moment().format("YYYYMMDD")));
+					} else {
+						timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).format(this.config.dateFormat));
+					}
+				} else {
+					timeWrapper.innerHTML = this.capFirst(datePrefix + moment(dateValue).fromNow());
+				}
 
-						taskWrapper.appendChild(timeWrapper);
+				taskWrapper.appendChild(timeWrapper);
 			}
 			wrapper.appendChild(taskWrapper);
 
